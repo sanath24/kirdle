@@ -8,3 +8,9 @@
         @apply font-body bg-blue-200
     }
 }
+
+@layer utilities {
+    .keyboard-row {
+        @apply flex mt-2 justify-center
+    }
+}

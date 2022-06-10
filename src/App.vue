@@ -1,10 +1,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import KirdleGrid from "./components/KirdleGrid.vue";
+import KirdleKeyboard from "./components/KirdleKeyboard.vue";
 
 export default defineComponent({
   name: "App",
-  components: {KirdleGrid}
+  components: { KirdleGrid, KirdleKeyboard }
 })
 </script>
 <template>
@@ -13,6 +14,7 @@ export default defineComponent({
       <h1 class="text-4xl font-bold tracking-widest">KIRDLE</h1>
     </nav>
     <KirdleGrid class="my-5"></KirdleGrid>
+    <KirdleKeyboard />
 
   </div>
  
