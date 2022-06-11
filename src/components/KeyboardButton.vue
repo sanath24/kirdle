@@ -24,7 +24,7 @@ export default defineComponent({
       typeLetter (char: string) { 
         if (store.isDone) return
 
-        if (store.curTile >= store.tileArray.length - 1) {
+        if (store.curTile >= store.tileArray.length) {
             return
         }
 
