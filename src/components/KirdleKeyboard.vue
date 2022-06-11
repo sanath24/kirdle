@@ -4,7 +4,7 @@ import KeyboardButton from "./KeyboardButton.vue";
 
 export default defineComponent({
   name: "KirdleKeyboard",
-  components: {KeyboardButton}
+  components: {KeyboardButton},
 })
 
 </script>
