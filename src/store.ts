@@ -6,7 +6,7 @@ import type { Tile } from "./types";
 export const store = reactive({
     tileArray: Array(30).fill(0).map((i) => ({ch: " ", color: "bg-white"} as Tile)) as Tile[],
     curTile: 0,
-    solution: ["C", "U", "T", "I", "E"],
+    solution: ["S", "W", "E", "E", "T"],
     guessStatus: Array(26).fill(-1),
     isDone: false,
     alerts: {
