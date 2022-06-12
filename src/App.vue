@@ -14,7 +14,8 @@ export default defineComponent({
     const wordRef = ref(db, "/");
     const day = Math.ceil(Math.abs((new Date()).getTime() - (new Date("6/12/2022")).getTime()) / (1000 * 60 * 60 * 24)) 
     onValue(wordRef, (snapshot) => {
-      let word: string = snapshot.val()[day]
+      let val: [] = snapshot.val()
+      let word: string = val[Math.min(val.length, day)]
       store.solution = word.split("")
     })
   },
