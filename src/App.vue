@@ -1,14 +1,25 @@
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent, onMounted } from "vue";
 import KirdleGrid from "./components/KirdleGrid.vue";
 import KirdleKeyboard from "./components/KirdleKeyboard.vue";
 import ErrorMessage from "./components/ErrorMessage.vue";
 import { store } from "./store";
+import db from "./db";
+import { child, get, onValue, ref } from "firebase/database";
 
 export default defineComponent({
   name: "App",
   components: { KirdleGrid, KirdleKeyboard, ErrorMessage },
+  mounted () {
+    const wordRef = ref(db, "/");
+    const day = Math.ceil(Math.abs((new Date()).getTime() - (new Date("6/12/2022")).getTime()) / (1000 * 60 * 60 * 24)) 
+    onValue(wordRef, (snapshot) => {
+      let word: string = snapshot.val()[day]
+      store.solution = word.split("")
+    })
+  },
   data () {
+    console.log(store.solution)
     return {store}
   }
 })

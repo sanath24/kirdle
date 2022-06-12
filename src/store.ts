@@ -1,5 +1,9 @@
+import { set } from "@firebase/database";
+import { ref } from "firebase/database";
 import { reactive } from "vue";
+import db from "./db";
 import type { Tile } from "./types";
+
 
 
 
