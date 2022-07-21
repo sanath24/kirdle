@@ -12,10 +12,11 @@ export default defineComponent({
   components: { KirdleGrid, KirdleKeyboard, ErrorMessage },
   mounted () {
     const wordRef = ref(db, "/");
-    const day = Math.ceil(Math.abs((new Date()).getTime() - (new Date("6/12/2022")).getTime()) / (1000 * 60 * 60 * 24)) 
+    const day = Math.floor(Math.abs((new Date()).getTime() - (new Date("7/21/2022")).getTime()) / (1000 * 60 * 60 * 24)) 
     onValue(wordRef, (snapshot) => {
-      let val: [] = snapshot.val()
-      let word: string = val[Math.min(val.length, day)]
+      let val: [] = snapshot.val()["available_words"]
+      let word: string = val[Math.min(val.length - 1, day)]
+      console.log(word)
       store.solution = word.split("")
     })
   },
